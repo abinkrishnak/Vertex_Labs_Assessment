@@ -1,0 +1,17 @@
+Section A (~30 min)
+
+1. Asked ChatGPT to draft the extraction prompt. I wrote the test article, the edge-case rules and the expected outputs myself.
+2. It missed the bracketed USD figure for Lumio Learn in 1 of 12 runs (amount_usd came back null).
+3. I checked all 12 outputs field by field against my expected answers, and checked that the evidence quotes match the article. I recorded the failure rather than hiding it. About 30+ minutes.
+
+Section B (~35 min)
+
+1. Asked AI to suggest the spreadsheet formulas where i have assigned the steps on what to do and check like a overview. Set the rules: Q3 filter, currency rates, duplicates, outlier.
+2. I missed the text date 18/09/2026, but later manually changed it to proper date format.
+3. I fixed the date, flagged duplicates and the outlier, and re-added each sector total by hand. Logistics came to USD 44.6M. Took about 35 minutes.
+
+Section C (~35 min)
+
+1. Asked AI to review the code where i understand the total logic of the code. I ran the code and tests myself and chose the merge decision.
+2. The original AI fix crashed on None dates and mis-sorted mixed time zones.
+3. I confirmed each bug by running it, wrote four new tests with help of AI and an updated fix.py, and checked that all 8 tests pass. About 35+ minutes.

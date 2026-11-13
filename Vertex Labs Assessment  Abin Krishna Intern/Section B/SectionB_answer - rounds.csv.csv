@@ -1,0 +1,23 @@
+date,company,sector,round,amount,currency,source,Q3,company_clean,sector_clean,amount_usd,duplicate_flag,Outlier_flag,Sector,Total_USD,,,
+2026-06-28,SwiftSend,Fintech,Series A,15000000,USD,TechWire,FALSE,swiftsend,Fintech,15000000,Unique,OK,Fintech,27670000,,,
+2026-07-03,Kirana Fleet,Logistics,Series A,12000000,USD,TechWire,TRUE,kirana fleet,Logistics,12000000,Unique,OK,Logistics,44550000,,ANSWERS,
+2026-07-04,Kirana Fleet Pte Ltd,Logistics,Series A,12000000,USD,AsiaDeals,TRUE,kirana fleet,Logistics,12000000,Duplicate,OK,Healthtech,37390000,,Logistics,44550000
+2026-07-09,MediNest,Healthtech,Seed,2000000,USD,AsiaDeals,TRUE,medinest,Healthtech,2000000,Unique,OK,Agritech,25800000,,Healthtech,37390000
+2026-07-15,PayLoom,Fintech,Series B,18000000,USD,TechWire,TRUE,payloom,Fintech,18000000,Unique,OK,Climate,13680000,,Fintech,27670000
+2026-07-15,PayLoom,FinTech,Series B,18000000,USD,Press release,TRUE,payloom,Fintech,18000000,Duplicate,OK,,,,Agritech,25800000
+2026-07-22,AgroSense,Agritech,Seed,400000000,INR,AsiaDeals,TRUE,agrosense,Agritech,4800000,Unique,OK,,,,Climate,13680000
+2026-07-30,WasteWise,Climate,Pre-seed,600000,USD,TechWire,TRUE,wastewise,Climate,600000,Unique,OK,,,,,
+2026-08-05,LedgerLeaf,Fintech,Seed,250000000,USD,Press release,TRUE,ledgerleaf,Fintech,250000000,Unique,Outlier,,,,,
+2026-08-08,SolarSprout,Climate,Series A,10000000,USD,AsiaDeals,TRUE,solarsprout,Climate,10000000,Unique,OK,,,,,
+2026-08-12,Portline,Logistics,Series B,25000000,SGD,TechWire,TRUE,portline,Logistics,19250000,Unique,OK,,,,,
+2026-08-18,CareGrid,Healthtech,Series B,30000000,USD,TechWire,TRUE,caregrid,Healthtech,30000000,Unique,OK,,,,,
+2026-08-20,RouteNine,Logistics,Pre-seed,800000,USD,AsiaDeals,TRUE,routenine,Logistics,800000,Unique,OK,,,,,
+2026-08-30,CropIQ,Agritech,Seed,3000000,USD,TechWire,TRUE,cropiq,Agritech,3000000,Unique,OK,,,,,
+2026-09-02,HaulHub,Logistics,Seed,3500000,USD,AsiaDeals,TRUE,haulhub,Logistics,3500000,Unique,OK,,,,,
+2026-09-03,VitaLab,Healthtech,Series A,7000000,SGD,Press release,TRUE,vitalab,Healthtech,5390000,Unique,OK,,,,,
+2026-09-10,Kopi Pay,FinTech,Series A,11000000,SGD,AsiaDeals,TRUE,kopi pay,Fintech,8470000,Unique,OK,,,,,
+2026-09-14,SoilSense,Agritech,Series A,1500000000,INR,TechWire,TRUE,soilsense,Agritech,18000000,Unique,OK,,,,,
+2026-09-18,Dockside,Logistics,Series A,9000000,USD,TechWire,TRUE,dockside,Logistics,9000000,Unique,OK,,,,,
+2026-09-21,GridCool,Climate,Seed,4000000,SGD,AsiaDeals,TRUE,gridcool,Climate,3080000,Unique,OK,,,,,
+2026-09-25,ClearCap,Fintech,Pre-seed,1200000,USD,TechWire,TRUE,clearcap,Fintech,1200000,Unique,OK,,,,,
+2026-10-02,Pulsewise,Healthtech,Series A,20000000,USD,Press release,FALSE,pulsewise,Healthtech,20000000,Unique,OK,,,,,

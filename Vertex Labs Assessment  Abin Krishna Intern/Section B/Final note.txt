@@ -1,0 +1,7 @@
+Logistics raised the most in Q3 2026: about USD 44.6M, ahead of Healthtech (USD 37.4M) and Fintech (USD 27.7M).
+
+How I got there: I left the raw data untouched and added helper columns. Each row was checked for Q3 (1 Jul to 30 Sep), converted to USD at the supplied rates, and given a standard sector label. Totals were then summed by sector.
+
+What was excluded from the total: two duplicate reports (Kirana Fleet, PayLoom), two rounds outside the quarter (SwiftSend, Pulsewise), and one outlier, LedgerLeaf’s USD 250M seed round. Nothing was deleted. Rows were flagged and left out of the sum.
+
+Condition: LedgerLeaf looks like a data error. If it is real, Fintech would lead at about USD 278M, so we need to verify the source before presenting to higher team. Logistics also relies on Portline’s SGD 25M (about USD 19.3M).

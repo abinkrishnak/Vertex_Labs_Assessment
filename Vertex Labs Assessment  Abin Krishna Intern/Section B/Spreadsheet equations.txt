@@ -1,0 +1,9 @@
+Spreadsheet equations
+
+To get Q3 2026: =AND(A2>=DATE(2026,7,1),A2<=DATE(2026,9,30))
+Company_clean data (removing most common suffix ): =TRIM(REGEXREPLACE(LOWER(B2),"\b(pte|ltd|limited|inc|llc|pvt|corp|plc)\b|[^a-z0-9 ]"," "))
+Sector_clean : =PROPER(TRIM(C2))
+amount_usd : =IF(F2="USD",E2,IF(F2="SGD",E2*0.77,IF(F2="INR",E2*0.012,NA())))
+duplicate_ flag: =IF(COUNTIFS($I$2:I2,I2,$D$2:D2,D2,$K$2:K2,K2)>1,"Duplicate","Unique")
+outlier_flag (Just checked for 'seed' round ):=IF(AND(D2="Seed",K2>50000000),"Outlier","OK")
+Total_USD : =SUMIFS($K$2:$K$23,$J$2:$J$23,N2,$L$2:$L$23,"Unique",$H$2:$H$23,TRUE,$M$2:$M$23,"OK")

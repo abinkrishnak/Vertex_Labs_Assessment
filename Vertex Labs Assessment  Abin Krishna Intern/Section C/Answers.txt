@@ -1,0 +1,50 @@
+1. Problems, most serious first
+
+It crashes when a deal has no last contact date (None). Those deals are the ones that most need a follow-up.
+It sorts dates as text, so deals with +08:00 and +05:30 times come out in the wrong order, with no error shown.
+The docstring says times are converted to UTC, but they are not. Dates with no timezone also crash.
+A deal that is 14 days and a few hours old is missed, because the day count rounds down.
+The tests check none of this, and two of them depend on today’s date.
+
+2. Decision
+Merge with changes. Problem 1 (the crash) and problem 2 (the wrong order) must be fixed before merging, because they cause missed or wrongly ordered follow-ups on live deals. The rest are smaller. Passing tests were not enough here.
+
+3. Test to add
+from datetime import datetime, timezone
+
+from fix import deals_needing_followup
+
+TODAY = datetime(2026, 11, 1, tzinfo=timezone.utc)
+
+
+def deal(name, last, stage="Sourcing"):
+    return {"name": name, "stage": stage, "last_contact": last}
+
+
+def test_none_last_contact_included_first():
+    deals = [deal("Old", "2026-10-01T09:00:00+08:00"), deal("Never", None)]
+    assert deals_needing_followup(deals, today=TODAY) == ["Never", "Old"]
+
+
+def test_mixed_offsets_sorted_by_real_time():
+    # Singapore = 10-01 16:00 UTC (older), India = 10-01 18:00 UTC
+    deals = [deal("India", "2026-10-01T23:30:00+05:30"),
+             deal("Singapore", "2026-10-02T00:00:00+08:00")]
+    assert deals_needing_followup(deals, today=TODAY) == ["Singapore", "India"]
+
+
+def test_14_day_boundary():
+    deals = [deal("Exact", "2026-10-18T00:00:00+00:00"),
+             deal("Over", "2026-10-17T23:59:59+00:00")]
+    assert deals_needing_followup(deals, today=TODAY) == ["Over"]
+
+
+def test_naive_inputs_do_not_crash():
+    deals = [deal("Naive", "2026-10-01T09:00:00")]
+    assert deals_needing_followup(deals, today=datetime(2026, 11, 1)) == ["Naive"]
+
+
+4. Questions for the teammate
+
+If a date has no timezone (no +08:00 or +05:30), should we treat it as UTC or Singapore time?
+If a deal was last contacted exactly 14 days ago, should it be on the follow-up list?
